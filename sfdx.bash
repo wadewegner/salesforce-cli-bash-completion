@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# DESCRIPTION: Bash completion script for the Salesforce CLI
+# AUTHOR: Wade Wegner (@WadeWegner)
+# REPO: https://github.com/wadewegner/salesforce-cli-bash-completion
+# LICENSE: https://github.com/wadewegner/salesforce-cli-bash-completion/blob/master/LICENSE
+
 if ! type __ltrim_colon_completions >/dev/null 2>&1; then
   #   Copyright © 2006-2008, Ian Macdonald <ian@caliban.org>
   #             © 2009-2017, Bash Completion Maintainers
