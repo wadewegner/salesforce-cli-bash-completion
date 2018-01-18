@@ -124,21 +124,31 @@ _sfdx()
 
     case "$prev" in
     sfdx)
+
         COMPREPLY=( $(compgen -W "${words[*]}" -- $cur))
         __ltrim_colon_completions "$cur"
         ;;
-    *)
-        COMPREPLY=($(compgen -f  -- "${COMP_WORDS[${COMP_CWORD}]}" ))
 
-        for ((ff=0; ff<${#COMPREPLY[@]}; ff++)); do
-            test -d "${COMPREPLY[$ff]}" && COMPREPLY[$ff]="${COMPREPLY[$ff]}/"
-            test -f "${COMPREPLY[$ff]}" && COMPREPLY[$ff]="${COMPREPLY[$ff]} "
-        done
+    force:org:create)
+
+        local -a args=(
+            -s \ 
+            -f \ 
+        )
+
+        COMPREPLY=( $(compgen -W "${args[*]}" -- $cur))
+        __ltrim_colon_completions "$cur"
+        ;;
+
+    *)
+        # return to normal completion
+        COMPREPLY=()
 
         ;;
+
     esac
 
     return 0
 }
 
-complete -o bashdefault -o nospace  -F _sfdx sfdx
+complete -o default -F _sfdx sfdx
