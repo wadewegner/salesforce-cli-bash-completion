@@ -15,7 +15,6 @@ completion+="\n# REPO: https://github.com/wadewegner/salesforce-cli-bash-complet
 completion+="\n# LICENSE: https://github.com/wadewegner/salesforce-cli-bash-completion/blob/master/LICENSE"
 completion+="\n"
 
-
 completion+="\nif ! type __ltrim_colon_completions >/dev/null 2>&1; then"
 completion+="\n  #   Copyright © 2006-2008, Ian Macdonald <ian@caliban.org>"
 completion+="\n  #             © 2009-2017, Bash Completion Maintainers"
@@ -42,28 +41,39 @@ completion+="\n"
 completion+="\n_sfdx()"
 completion+="\n{"
 completion+="\n    local cur"
-completion+="\n    local words"
+completion+="\n    local prev"
 completion+="\n"
 completion+="\n    cur=\"\${COMP_WORDS[COMP_CWORD]}\""
-
+completion+="\n    prev=\"\${COMP_WORDS[COMP_CWORD-1]}\""
+completion+="\n"
+completion+="\n    local -a words=("
 # generate list of commands
-commands=""
 while read name
 do
-  commands="${commands} $name"
+  completion+="\n        $name \\ "
 done <<< "$(jq -r 'to_entries[] | "\(.value.name)"' commands-list.json)"
 
-# remove leading/trailing spaces
-commands="$(echo $commands | sed -e 's/^[ \t]*//')"
-
-completion+="\n    words='$commands'"
+completion+="\n    )"
 completion+="\n"
-completion+="\n    COMPREPLY=( \$(compgen -W '\$words'  -- \$cur))"
-completion+="\n    __ltrim_colon_completions \"\$cur\""
+completion+="\n    case \"\$prev\" in"
+completion+="\n    sfdx)"
+completion+="\n        COMPREPLY=( \$(compgen -W \"\${words[*]}\" -- \$cur))"
+completion+="\n        __ltrim_colon_completions \"\$cur\""
+completion+="\n        ;;"
+completion+="\n    *)"
+completion+="\n        COMPREPLY=(\$(compgen -f  -- \"\${COMP_WORDS[\${COMP_CWORD}]}\" ))"
+completion+="\n"
+completion+="\n        for ((ff=0; ff<\${#COMPREPLY[@]}; ff++)); do"
+completion+="\n            test -d \"\${COMPREPLY[\$ff]}\" && COMPREPLY[\$ff]=\"\${COMPREPLY[\$ff]}/\""
+completion+="\n            test -f \"\${COMPREPLY[\$ff]}\" && COMPREPLY[\$ff]=\"\${COMPREPLY[\$ff]} \""
+completion+="\n        done"
+completion+="\n"
+completion+="\n        ;;"
+completion+="\n    esac"
 completion+="\n"
 completion+="\n    return 0"
 completion+="\n}"
 completion+="\n"
-completion+="\ncomplete -F _sfdx sfdx"
+completion+="\ncomplete -o bashdefault -o nospace  -F _sfdx sfdx"
 
 echo "$completion" > sfdx.bash
