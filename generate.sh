@@ -53,6 +53,13 @@ do
   completion+="\n        $name \\ "
 done <<< "$(jq -r 'to_entries[] | "\(.value.name)"' commands-list.json)"
 
+completion+="\n        plugins:install \\ "
+completion+="\n        plugins:link \\ "
+completion+="\n        plugins:install \\ "
+completion+="\n        plugins:uninstall \\ "
+completion+="\n        plugins:update \\ "
+completion+="\n        update"
+
 completion+="\n    )"
 completion+="\n"
 completion+="\n    case \"\$prev\" in"

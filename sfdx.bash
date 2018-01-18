@@ -120,6 +120,12 @@ _sfdx()
         force:user:permset:assign \ 
         force:visualforce:component:create \ 
         force:visualforce:page:create \ 
+        plugins:install \ 
+        plugins:link \ 
+        plugins:install \ 
+        plugins:uninstall \ 
+        plugins:update \ 
+        update
     )
 
     case "$prev" in
