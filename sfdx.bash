@@ -124,28 +124,13 @@ _sfdx()
 
     case "$prev" in
     sfdx)
-
         COMPREPLY=( $(compgen -W "${words[*]}" -- $cur))
         __ltrim_colon_completions "$cur"
         ;;
-
-    force:org:create)
-
-        local -a args=(
-            -s \ 
-            -f \ 
-        )
-
-        COMPREPLY=( $(compgen -W "${args[*]}" -- $cur))
-        __ltrim_colon_completions "$cur"
-        ;;
-
     *)
         # return to normal completion
         COMPREPLY=()
-
         ;;
-
     esac
 
     return 0
