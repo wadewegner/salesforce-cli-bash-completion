@@ -43,10 +43,12 @@ _sfdx()
         force:apex:execute \ 
         force:apex:log:get \ 
         force:apex:log:list \ 
+        force:apex:log:tail \ 
         force:apex:test:report \ 
         force:apex:test:run \ 
         force:apex:trigger:create \ 
         force:auth:jwt:grant \ 
+        force:auth:logout \ 
         force:auth:sfdxurl:store \ 
         force:auth:web:login \ 
         force:config:get \ 
@@ -69,6 +71,7 @@ _sfdx()
         force:lightning:event:create \ 
         force:lightning:interface:create \ 
         force:lightning:lint \ 
+        force:lightning:lwc:create \ 
         force:lightning:test:create \ 
         force:lightning:test:install \ 
         force:lightning:test:run \ 
