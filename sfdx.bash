@@ -70,8 +70,6 @@ _sfdx()
         force:lightning:component:create \ 
         force:lightning:event:create \ 
         force:lightning:interface:create \ 
-        force:lightning:lint \ 
-        force:lightning:lwc:create \ 
         force:lightning:test:create \ 
         force:lightning:test:install \ 
         force:lightning:test:run \ 
@@ -102,11 +100,23 @@ _sfdx()
         force:package2:version:get \ 
         force:package2:version:list \ 
         force:package2:version:update \ 
+        force:package:create \ 
         force:package:install \ 
         force:package:install:get \ 
+        force:package:install:report \ 
         force:package:installed:list \ 
+        force:package:list \ 
         force:package:uninstall \ 
         force:package:uninstall:get \ 
+        force:package:uninstall:report \ 
+        force:package:update \ 
+        force:package:version:create \ 
+        force:package:version:create:list \ 
+        force:package:version:create:report \ 
+        force:package:version:list \ 
+        force:package:version:promote \ 
+        force:package:version:report \ 
+        force:package:version:update \ 
         force:project:create \ 
         force:project:upgrade \ 
         force:schema:sobject:describe \ 
