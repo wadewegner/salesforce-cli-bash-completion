@@ -70,6 +70,7 @@ _sfdx()
         force:lightning:component:create \ 
         force:lightning:event:create \ 
         force:lightning:interface:create \ 
+        force:lightning:lint \ 
         force:lightning:test:create \ 
         force:lightning:test:install \ 
         force:lightning:test:run \ 
