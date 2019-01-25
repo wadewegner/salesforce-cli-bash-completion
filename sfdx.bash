@@ -70,12 +70,14 @@ _sfdx()
         force:lightning:component:create \ 
         force:lightning:event:create \ 
         force:lightning:interface:create \ 
+        force:lightning:lint \ 
         force:lightning:test:create \ 
         force:lightning:test:install \ 
         force:lightning:test:run \ 
         force:limits:api:display \ 
         force:mdapi:convert \ 
         force:mdapi:deploy \ 
+        force:mdapi:deploy:cancel \ 
         force:mdapi:deploy:report \ 
         force:mdapi:retrieve \ 
         force:mdapi:retrieve:report \ 
@@ -87,27 +89,23 @@ _sfdx()
         force:org:shape:create \ 
         force:org:shape:delete \ 
         force:org:shape:list \ 
+        force:org:snapshot:create \ 
+        force:org:snapshot:delete \ 
+        force:org:snapshot:get \ 
+        force:org:snapshot:list \ 
         force:package1:version:create \ 
         force:package1:version:create:get \ 
         force:package1:version:display \ 
         force:package1:version:list \ 
-        force:package2:create \ 
-        force:package2:list \ 
-        force:package2:update \ 
-        force:package2:version:create \ 
-        force:package2:version:create:get \ 
-        force:package2:version:create:list \ 
-        force:package2:version:get \ 
-        force:package2:version:list \ 
-        force:package2:version:update \ 
         force:package:create \ 
+        force:package:hammertest:list \ 
+        force:package:hammertest:report \ 
+        force:package:hammertest:run \ 
         force:package:install \ 
-        force:package:install:get \ 
         force:package:install:report \ 
         force:package:installed:list \ 
         force:package:list \ 
         force:package:uninstall \ 
-        force:package:uninstall:get \ 
         force:package:uninstall:report \ 
         force:package:update \ 
         force:package:version:create \ 
@@ -122,9 +120,12 @@ _sfdx()
         force:schema:sobject:describe \ 
         force:schema:sobject:list \ 
         force:source:convert \ 
+        force:source:delete \ 
+        force:source:deploy \ 
         force:source:open \ 
         force:source:pull \ 
         force:source:push \ 
+        force:source:retrieve \ 
         force:source:status \ 
         force:user:create \ 
         force:user:display \ 
