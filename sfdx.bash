@@ -33,8 +33,7 @@ _sfdx()
     local cur
     local prev
 
-    cur="${COMP_WORDS[COMP_CWORD]}"
-    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    _get_comp_words_by_ref -n : cur prev
 
     local -a words=(
         force:alias:list \ 
