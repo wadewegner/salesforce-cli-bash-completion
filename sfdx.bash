@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+-e #!/usr/bin/env bash
 
 # DESCRIPTION: Bash completion script for the Salesforce CLI
 # AUTHOR: Wade Wegner (@WadeWegner)
@@ -48,6 +48,7 @@ _sfdx()
         force:apex:test:run \ 
         force:apex:trigger:create \ 
         force:auth:jwt:grant \ 
+        force:auth:list \ 
         force:auth:logout \ 
         force:auth:sfdxurl:store \ 
         force:auth:web:login \ 
@@ -79,8 +80,11 @@ _sfdx()
         force:mdapi:deploy \ 
         force:mdapi:deploy:cancel \ 
         force:mdapi:deploy:report \ 
+        force:mdapi:describemetadata \ 
+        force:mdapi:listmetadata \ 
         force:mdapi:retrieve \ 
         force:mdapi:retrieve:report \ 
+        force:org:clone \ 
         force:org:create \ 
         force:org:delete \ 
         force:org:display \ 
@@ -93,6 +97,7 @@ _sfdx()
         force:org:snapshot:delete \ 
         force:org:snapshot:get \ 
         force:org:snapshot:list \ 
+        force:org:status \ 
         force:package1:version:create \ 
         force:package1:version:create:get \ 
         force:package1:version:display \ 
@@ -122,6 +127,8 @@ _sfdx()
         force:source:convert \ 
         force:source:delete \ 
         force:source:deploy \ 
+        force:source:deploy:cancel \ 
+        force:source:deploy:report \ 
         force:source:open \ 
         force:source:pull \ 
         force:source:push \ 
