@@ -1,4 +1,4 @@
--e #!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # DESCRIPTION: Bash completion script for the Salesforce CLI
 # AUTHOR: Wade Wegner (@WadeWegner)

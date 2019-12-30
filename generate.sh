@@ -78,4 +78,4 @@ completion+="\n}"
 completion+="\n"
 completion+="\ncomplete -o default -F _sfdx sfdx"
 
-echo -e "$completion" > sfdx.bash
+echo "$completion" > sfdx.bash
