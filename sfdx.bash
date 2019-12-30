@@ -47,6 +47,7 @@ _sfdx()
         force:apex:test:report \ 
         force:apex:test:run \ 
         force:apex:trigger:create \ 
+        force:auth:device:login \ 
         force:auth:jwt:grant \ 
         force:auth:list \ 
         force:auth:logout \ 
